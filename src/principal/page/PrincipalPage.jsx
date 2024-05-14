@@ -96,11 +96,21 @@ const tiers = [
 ];
 const faqs = [
   {
-    question: "What's the best thing about Switzerland?",
+    question: "¿Qué es el Servicio de Consultas en Línea Vía Línea Dedicada?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "El servicio de Consultas en Línea vía Línea Dedicada está dirigido a autoridades policiales y judiciales e instituciones públicas y privadas, con fines de verificación de identidad y consiste en establecer entre el RENIEC y el interesado una línea dedicada por la cual accederá a nuestra información para esto es necesario que el interesado posea un servidor y realice un desarrollo utilizando las APIS del RENIEC disponibles para diversos lenguajes de programación. El servicio se inicia después de la firma del convenio de suministro de información.",
   },
-  // More questions...
+  {
+    question:
+      "Soy una persona natural, ¿Puedo obtener una cuenta para el Servicio de Consultas en Línea vía Internet?",
+    answer:
+      "Las personas naturales no pueden acceder a este servicio. El Servicio de Consultas en Línea vía Internet está orientado a autoridades policiales y judiciales e instituciones públicas y privadas, con fines de verificación de identidad para el cumplimiento de sus funciones, garantizando el irrestricto respeto por la intimidad de las personas.",
+  },
+  {
+    question: "¿Por qué es necesario que los niños tengan DNI?",
+    answer:
+      "El DNI es necesario para que los niños y niñas puedan ser identificados y tengan acceso a los servicios de salud, programas sociales, así como para su libre desplazamiento por el interior o exterior del país. Es importante también para evitar la trata de menores y secuestros. El Nº de DNI será el mismo cuando cumpla la mayoría de edad y el que utilizará toda su vida. En la actualidad, el DNI de menores se emite a las personas comprendidas entre los 0 años de edad hasta los 16 años, en el marco del programa de registro e identificación de menores . El DNI de menores tiene un costo de 16 soles.",
+  },
 ];
 const footerNavigation = {
   solutions: [
@@ -493,7 +503,7 @@ export const PrincipalPage = () => {
 
         {/* Categories section */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl pt-16 sm:pt-32 lg:pt-40 space-y-10">
+          <div className="mx-auto max-w-4xl pt-16 sm:pt-32 lg:pt-40 space-y-20">
             <h2 className="text-6xl font-bold tracking-tight">Categorías</h2>
             <p className="text-xl leading-8 italic">
               Conoce todos los trámites, servicios y contenido de orientación
@@ -533,7 +543,7 @@ export const PrincipalPage = () => {
         </div>
 
         {/* Pricing section */}
-        <div className="relative isolate mt-32 bg-white px-6 sm:mt-56 lg:px-8">
+        {/* <div className="relative isolate mt-32 bg-white px-6 sm:mt-56 lg:px-8">
           <div
             className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl"
             aria-hidden="true"
@@ -644,15 +654,15 @@ export const PrincipalPage = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* FAQ section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
+        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-32  lg:px-8">
           <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-            <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">
-              Frequently asked questions
+            <h2 className="text-6xl font-bold leading-10 tracking-tight text-gray-900">
+              Preguntas frecuentes
             </h2>
-            <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
+            <dl className="mt-20 space-y-6 divide-y divide-gray-900/10">
               {faqs.map((faq) => (
                 <Disclosure as="div" key={faq.question} className="pt-6">
                   {({ open }) => (
@@ -702,8 +712,8 @@ export const PrincipalPage = () => {
         <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <img
-              className="h-7"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+              className="h-7 rounded-md"
+              src="https://cdn6.aptoide.com/imgs/c/8/2/c82d88a3bf5ce9285718a734434b9ea9_icon.png"
               alt="Company name"
             />
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
