@@ -499,12 +499,12 @@ export const PrincipalPage = () => {
               Conoce todos los trámites, servicios y contenido de orientación
               sobre un tema en específico.
             </p>
-            <div className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+            <div className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
               {projects.map((project) => (
                 <a
                   href={project.href}
                   key={project.name}
-                  className="col-span-1 flex rounded-md shadow-sm"
+                  className="col-span-1 flex rounded-md shadow-2xl hover:transform hover:scale-105 hover:shadow-xl transition-transform duration-200 ease-in-out"
                   target="_blank"
                 >
                   <div
@@ -516,8 +516,8 @@ export const PrincipalPage = () => {
                     {project.initials}
                   </div>
                   <div className="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white">
-                    <div className="flex-1 truncate px-4 py-2 text-sm">
-                      <span className="font-medium text-gray-900 hover:text-gray-600">
+                    <div className="flex-1 truncate px-4 py-2">
+                      <span className="font-bold text-xl text-gray-900 hover:text-gray-600">
                         {project.name}
                       </span>
 
