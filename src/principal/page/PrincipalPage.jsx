@@ -114,28 +114,12 @@ const faqs = [
 ];
 const footerNavigation = {
   solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
-  ],
-  support: [
-    { name: "Pricing", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "API Status", href: "#" },
-  ],
-  company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Partners", href: "#" },
-  ],
-  legal: [
-    { name: "Claim", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
+    { name: "El Estado Peruano", href: "#" },
+    { name: "¿Qué es Gob.pe?", href: "#" },
+    {
+      name: "Política de privacidad para el manejo de datos en Gob.pe",
+      href: "#",
+    },
   ],
 };
 const projects = [
@@ -709,18 +693,13 @@ export const PrincipalPage = () => {
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
-          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <img
-              className="h-7 rounded-md"
-              src="https://cdn6.aptoide.com/imgs/c/8/2/c82d88a3bf5ce9285718a734434b9ea9_icon.png"
-              alt="Company name"
-            />
-            <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-              <div className="md:grid md:grid-cols-2 md:gap-8">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+          <div className="xl:grid xl:grid-cols-2 xl:gap-8">
+            <div className="mt-16 grid grid-cols-2 xl:col-span-2 xl:mt-0">
+              <div className="grid grid-cols-2 gap-8 place-items-center">
                 <div>
                   <h3 className="text-sm font-semibold leading-6 text-white">
-                    Solutions
+                    Sobre el Estado Peruano
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {footerNavigation.solutions.map((item) => (
@@ -735,59 +714,29 @@ export const PrincipalPage = () => {
                     ))}
                   </ul>
                 </div>
-                <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-white">
-                    Support
+                <div className="flex flex-col justify-center">
+                  <h3 className="text-sm font-semibold leading-6 text-white pb-10">
+                    Redes Sociales
                   </h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.support.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          className="text-sm leading-6 text-gray-300 hover:text-white"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="flex items-center justify-center space-x-5">
+                    <a
+                      href="https://www.facebook.com/PeruPaisDigital/"
+                      target="_blank"
+                    >
+                      <img src="/facebook.svg" alt="" />
+                    </a>
+                    <a
+                      href="https://twitter.com/PeruPaisDigital"
+                      target="_blank"
+                    >
+                      <img src="/twitter.svg" alt="" />
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white">
-                    Company
-                  </h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.company.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          className="text-sm leading-6 text-gray-300 hover:text-white"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-white">
-                    Legal
-                  </h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.legal.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          className="text-sm leading-6 text-gray-300 hover:text-white"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+
+              <div className="grid place-items-center">
+                <img src="/reniecsvg.svg" alt="logo reniec svg" />
               </div>
             </div>
           </div>
