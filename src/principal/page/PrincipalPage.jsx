@@ -696,7 +696,7 @@ export const PrincipalPage = () => {
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <div className="xl:grid xl:grid-cols-2 xl:gap-8">
             <div className="mt-16 grid grid-cols-2 xl:col-span-2 xl:mt-0">
-              <div className="grid grid-cols-2 gap-8 place-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
                 <div>
                   <h3 className="text-sm font-semibold leading-6 text-white">
                     Sobre el Estado Peruano
