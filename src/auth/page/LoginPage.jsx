@@ -1,13 +1,17 @@
+import { Link } from "react-router-dom";
+
 export const LoginPage = () => {
   return (
     <main className="h-screen">
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className=" sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            className="mx-auto h-10 w-auto rounded-md"
-            src="https://cdn6.aptoide.com/imgs/c/8/2/c82d88a3bf5ce9285718a734434b9ea9_icon.png"
-            alt="RENIEC Logo"
-          />
+          <Link to="/">
+            <img
+              className="mx-auto h-10 w-auto rounded-md"
+              src="https://cdn6.aptoide.com/imgs/c/8/2/c82d88a3bf5ce9285718a734434b9ea9_icon.png"
+              alt="RENIEC Logo"
+            />
+          </Link>
           <h2 className="mt-10 text-center text-4xl font-bold leading-9 tracking-tight text-gray-900">
             Iniciar Sesión
           </h2>

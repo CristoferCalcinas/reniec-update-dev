@@ -14,8 +14,8 @@ import {
   FingerPrintIcon,
   LockClosedIcon,
   ServerIcon,
-  EllipsisVerticalIcon,
 } from "@heroicons/react/20/solid";
+import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -182,7 +182,11 @@ export const PrincipalPage = () => {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="https://www.gob.pe/" className="-m-1.5 p-1.5">
+            <a
+              href="https://www.gob.pe/"
+              className="-m-1.5 p-1.5"
+              target="_blank"
+            >
               <span className="sr-only">RENIEC</span>
               <img
                 className="h-8 w-auto rounded-md"
@@ -203,15 +207,15 @@ export const PrincipalPage = () => {
             </button>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a
-              href="/auth/login"
+            <Link
+              to="/auth/login"
               className="text-2xl font-semibold leading-6 text-white px-4 py-2 rounded-md border-2 border-red-900"
             >
               <span className="pr-2 uppercase tracking-widest">
                 Iniciar sesión
               </span>
               <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </div>
         </nav>
         <Dialog
