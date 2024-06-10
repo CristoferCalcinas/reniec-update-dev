@@ -119,6 +119,7 @@ export const LoginPage = () => {
                 <input
                   type="checkbox"
                   onClick={() => setVisiblePassword(!visiblePassword)}
+                  className="h-4 w-4"
                 />
               </div>
             </div>
