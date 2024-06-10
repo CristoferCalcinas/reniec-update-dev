@@ -1,8 +1,31 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { UsersInPlatform } from "../../helper/users";
 
 export const LoginPage = () => {
   const [visiblePassword, setVisiblePassword] = useState(false);
+  const {
+    formState: { errors },
+    register,
+    handleSubmit,
+    reset,
+  } = useForm();
+
+
+  const onSubmit = (data) => {
+    console.log(data);
+    const { dni, password } = data;
+    const user = UsersInPlatform.find(
+      (user) => user.dni === dni && user.password === password
+    );
+    if(!user) {
+      alert("Error: Usuario o contraseña incorrecta");
+      reset();
+      return;
+    }
+    window.location.href = "/calendar";
+  };
   return (
     <main className="h-screen">
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -20,23 +43,36 @@ export const LoginPage = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
+          <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
             <div>
               <label
-                htmlFor="email"
+                htmlFor="dni"
                 className="block text-lg font-medium leading-6 text-gray-900"
               >
                 Ingrese su DNI
               </label>
               <div className="mt-2">
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  id="dni"
+                  name="dni"
+                  type="text"
+                  {...register("dni", {
+                    required: {
+                      value: true,
+                      message: "Ingrese su DNI",
+                    },
+                    minLength: {
+                      value: 10,
+                      message: "DNI INVALIDO - El DNI debe tener 10 caracteres",
+                    },
+                  })}
+                  className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
+                {errors.dni && (
+                  <span className="text-red-800 text-sm font-semibold">
+                    {errors.dni.message}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -62,10 +98,23 @@ export const LoginPage = () => {
                   id="password"
                   name="password"
                   type={visiblePassword ? "text" : "password"}
-                  autoComplete="current-password"
-                  required
+                  {...register("password", {
+                    required: {
+                      value: true,
+                      message: "Ingrese su contraseña",
+                    },
+                    minLength: {
+                      value: 8,
+                      message: "La contraseña debe tener al menos 8 caracteres",
+                    },
+                  })}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
                 />
+                {errors.password && (
+                  <span className="text-red-800 text-sm font-semibold">
+                    {errors.password.message}
+                  </span>
+                )}
               </div>
               <div className="mt-5 flex justify-center items-center">
                 <input
