@@ -12,19 +12,18 @@ export const LoginPage = () => {
     reset,
   } = useForm();
 
-
   const onSubmit = (data) => {
     console.log(data);
     const { dni, password } = data;
     const user = UsersInPlatform.find(
       (user) => user.dni === dni && user.password === password
     );
-    if(!user) {
+    if (!user) {
       alert("Error: Usuario o contraseña incorrecta");
       reset();
       return;
     }
-    window.location.href = "/calendar";
+    window.location.href = "/dashboard";
   };
   return (
     <main className="h-screen">
