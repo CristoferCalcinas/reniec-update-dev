@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const LoginPage = () => {
+  const [visiblePassword, setVisiblePassword] = useState(false);
   return (
     <main className="h-screen">
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -59,10 +61,16 @@ export const LoginPage = () => {
                 <input
                   id="password"
                   name="password"
-                  type="password"
+                  type={visiblePassword ? "text" : "password"}
                   autoComplete="current-password"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
+                />
+              </div>
+              <div className="mt-5 flex justify-center items-center">
+                <input
+                  type="checkbox"
+                  onClick={() => setVisiblePassword(!visiblePassword)}
                 />
               </div>
             </div>
